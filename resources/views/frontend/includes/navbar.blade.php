@@ -20,7 +20,7 @@
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li><a class="nav-link" href="#"><img src="{{asset('frontend/assets/images/user.svg')}}"></a></li>
+                <li><a class="nav-link" href="{{route('login') }}"><img src="{{asset('frontend/assets/images/user.svg')}}"></a></li>
                 <li><a class="nav-link" href="{{route('cart') }}"><img src="{{asset('frontend/assets/images/cart.svg')}}"></a></li>
             </ul>
         </div>

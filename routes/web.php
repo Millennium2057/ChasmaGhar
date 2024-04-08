@@ -18,6 +18,10 @@ Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/cart',[HomeController::class,'cart'])->name('cart');
 Route::get('/cart/checkout',[HomeController::class,'checkout'])->name('checkout');
 Route::get('/cart/checkout/thankyou',[HomeController::class,'thankyou'])->name('thankyou');
+Route::get('/login',[HomeController::class,'login'])->name('login');
+Route::get('/login/register',[HomeController::class,'register'])->name('register');
+
+
 
 
 //Dashboard
