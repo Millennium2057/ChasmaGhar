@@ -1,14 +1,18 @@
 @extends('frontend.includes.app')
-
 @section('main-content')
 <div class="container mt-5 mb-5">
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register.user') }}">
                         @csrf
 
                         <div class="form-group">
@@ -52,9 +56,9 @@
                         </div>
 
                         <div class="form-group mt-3">
-                            <a href="{{ route('login') }}" class="btn btn-primary">
-                                {{ __('Register') }}
-                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                Register
+                            </button>
                         </div>
                 </div>
                 </form>

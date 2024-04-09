@@ -1,7 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\AuthenticateUser;
+use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -17,13 +21,18 @@ Route::get('/blogs',[HomeController::class,'blog'])->name('blog');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/cart',[HomeController::class,'cart'])->name('cart');
 Route::get('/cart/checkout',[HomeController::class,'checkout'])->name('checkout');
-Route::get('/cart/checkout/thankyou',[HomeController::class,'thankyou'])->name('thankyou');
-Route::get('/login',[HomeController::class,'login'])->name('login');
-Route::get('/login/register',[HomeController::class,'register'])->name('register');
+Route::get('/cart/checkout/thankyou',[HomeController::class,'thankyou'])->name('checkout.cart');
+
+
+Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginUser'])->name('handle.user');
+Route::get('/login/register',[AuthController::class,'register'])->name('register');
+Route::post('/login/register',[AuthController::class,'registerUser'])->name('register.user');
+
 
 
 
 
 //Dashboard
-Route::get('/admin',[AdminController::class,'dashboard'])->name('dashboard');
+Route::get('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard')->middleware('auth');
 

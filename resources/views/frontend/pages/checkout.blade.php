@@ -33,7 +33,7 @@
 		          <div class="p-3 p-lg-5 border bg-white">
 		            <div class="form-group">
 		              <label for="c_country" class="text-black">Country <span class="text-danger">*</span></label>
-		              <select id="c_country" class="form-control">
+		              <select id="c_country" class="form-control" required>
 		                <option value="1">Select a country</option>    
 		                <option value="2">bangladesh</option>    
 		                <option value="3">Algeria</option>    
@@ -48,11 +48,11 @@
 		            <div class="form-group row">
 		              <div class="col-md-6">
 		                <label for="c_fname" class="text-black">First Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_fname" name="c_fname">
+		                <input type="text" class="form-control" id="c_fname" name="c_fname" required>
 		              </div>
 		              <div class="col-md-6">
 		                <label for="c_lname" class="text-black">Last Name <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_lname" name="c_lname">
+		                <input type="text" class="form-control" id="c_lname" name="c_lname" required>
 		              </div>
 		            </div>
 
@@ -66,7 +66,7 @@
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="c_address" class="text-black">Address <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address">
+		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Street address" required>
 		              </div>
 		            </div>
 
@@ -273,7 +273,7 @@
 		                </div>
 
 		                <div class="form-group">
-                        <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='{{ route('thankyou') }}';">Place Order</button>
+						<button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='{{ route('checkout.cart') }}';">Place Order</button>
 
 		                </div>
 
