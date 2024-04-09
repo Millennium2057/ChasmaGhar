@@ -3,9 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
-use App\Http\Middleware\AuthenticateUser;
-use Illuminate\Auth\Middleware\Authenticate;
-use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -34,5 +32,5 @@ Route::post('/login/register',[AuthController::class,'registerUser'])->name('reg
 
 
 //Dashboard
-Route::get('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard')->middleware('auth');
+Route::get('/admin',[AdminController::class,'dashboard'])->name('dashboard')->middleware('auth');
 

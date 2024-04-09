@@ -6,14 +6,15 @@
 <div class="hero">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-lg-5">
+            <div class="col-lg-7">
                 <div class="intro-excerpt">
                     <h1>Blog</h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                    <p class="mb-4">
+                    Discover Chasmaghar's Blog for the latest in eyewear trends and style advice. From fashion insights to eye health tips, stay informed with us.</p>
+                    <p><a href="{{route ('shop')}}" class="btn btn-secondary me-2">Shop Now</a></p>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-5">
                 <div class="hero-img-wrap">
                     <img src="{{asset('frontend/assets/images/couch.png')}}" class="img-fluid">
                 </div>

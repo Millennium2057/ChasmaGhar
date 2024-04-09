@@ -583,11 +583,13 @@ a {
       border-radius: 10px !important; }
   .footer-section .sofa-img {
     position: absolute;
-    top: -200px;
+    scale: 1.2;
+    transform: rotate(5deg);
+    top: -180px;
     z-index: 1;
     right: 0; }
     .footer-section .sofa-img img {
-      max-width: 380px; }
+      max-width: 420px; }
   .footer-section .links-wrap {
     margin-top: 0px; }
     @media (min-width: 992px) {

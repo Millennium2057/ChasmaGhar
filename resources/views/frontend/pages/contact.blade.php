@@ -5,14 +5,15 @@
 <div class="hero">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-lg-5">
+            <div class="col-lg-7">
                 <div class="intro-excerpt">
                     <h1>Contact</h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                    <p class="mb-4">
+                    For inquiries or assistance, contact Chasmaghar via email at [email protected] or call +977-123-456-789. <br>We're here to help!</p>
+                    <p><a href="{{route ('shop')}}" class="btn btn-secondary me-2">Shop Now</a></p>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-5">
                 <div class="hero-img-wrap">
                     <img src="{{asset('frontend/assets/images/couch.png')}}" class="img-fluid">
                 </div>
@@ -43,7 +44,7 @@
                                     </svg>
                                 </div> <!-- /.icon -->
                                 <div class="service-contents">
-                                    <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+                                    <p>Ramdhuni Municipality,Sunsari,Nepal</p>
                                 </div> <!-- /.service-contents-->
                             </div> <!-- /.service -->
                         </div>
@@ -56,7 +57,7 @@
                                     </svg>
                                 </div> <!-- /.icon -->
                                 <div class="service-contents">
-                                    <p>info@yourdomain.com</p>
+                                    <p>millenniumneraula@gmail.com</p>
                                 </div> <!-- /.service-contents-->
                             </div> <!-- /.service -->
                         </div>
@@ -69,7 +70,7 @@
                                     </svg>
                                 </div> <!-- /.icon -->
                                 <div class="service-contents">
-                                    <p>+1 294 3925 3939</p>
+                                    <p>+977 9863017366</p>
                                 </div> <!-- /.service-contents-->
                             </div> <!-- /.service -->
                         </div>
@@ -80,19 +81,19 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label class="text-black" for="fname">First name</label>
-                                    <input type="text" class="form-control" id="fname">
+                                    <input type="text" class="form-control" id="fname" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
                                     <label class="text-black" for="lname">Last name</label>
-                                    <input type="text" class="form-control" id="lname">
+                                    <input type="text" class="form-control" id="lname" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="text-black" for="email">Email address</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" required>
                         </div>
 
                         <div class="form-group mb-5">

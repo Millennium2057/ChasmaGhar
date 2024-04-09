@@ -3,7 +3,7 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="{{asset('frontend/assets/images/sofa.png')}}" alt="Image" class="img-fluid">
+					<img src="{{asset('frontend/assets/images/sofa1.png')}}" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
@@ -31,14 +31,12 @@
 
 				<div class="row g-5 mb-5">
 					<div class="col-lg-4">
-						<div class="mb-4 footer-logo-wrap"><a href="{{route('index')}}" class="footer-logo">Furni<span>.</span></a></div>
-						<p class="mb-4">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant</p>
+						<div class="mb-4 footer-logo-wrap"><a href="{{route('index')}}" class="footer-logo">Chasma<span>Ghar</span></a></div>
+						<p class="mb-4">Chasmaghar: Nepal's leading eyewear destination. Discover trendy glasses for every occasion. Shop online and enjoy free nationwide delivery. Elevate your style today!</p>
 
 						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+							<li><a href="https://www.facebook.com/yaman.niraula"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+							<li><a href="https://www.instagram.com/niroulamillennium/"><span class="fa fa-brands fa-instagram"></span></a></li>
 						</ul>
 					</div>
 
@@ -46,36 +44,21 @@
 						<div class="row links-wrap">
 							<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
-									<li><a href="#">About us</a></li>
-									<li><a href="#">Services</a></li>
-									<li><a href="#">Blog</a></li>
-									<li><a href="#">Contact us</a></li>
+									<li><a href="{{route('about') }}">About us</a></li>
+									<li><a href="{{route('services') }}">Services</a></li>
+									<li><a href="{{route('blog') }}">Blog</a></li>
+									<li><a href="{{route('contact') }}">Contact us</a></li>
 								</ul>
 							</div>
-
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">Support</a></li>
-									<li><a href="#">Knowledge base</a></li>
-									<li><a href="#">Live chat</a></li>
-								</ul>
-							</div>
-
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="#">Jobs</a></li>
-									<li><a href="#">Our team</a></li>
-									<li><a href="#">Leadership</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-								</ul>
-							</div>
-
-							<div class="col-6 col-sm-6 col-md-3">
+        					<div class="col-6 col-sm-6 col-md-3">
 								<ul class="list-unstyled">
 									<li><a href="#">Nordic Chair</a></li>
 									<li><a href="#">Kruzo Aero</a></li>
 									<li><a href="#">Ergonomic Chair</a></li>
 								</ul>
+							</div>
+							<div class="col-6 col-sm-6 col-md-3">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d16960.472664989396!2d87.27199910129153!3d26.66448158794775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1712659450178!5m2!1sen!2snp" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 							</div>
 						</div>
 					</div>
