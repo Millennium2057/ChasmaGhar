@@ -8,11 +8,12 @@
             <div class="col-lg-5">
                 <div class="intro-excerpt">
                     <h1>About Us</h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-                    <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+                    <p class="mb-4">
+                        Chasmaghar: Nepal's premier eyewear destination. Discover trendy glasses for all occasions. Shop online now and enjoy free nationwide delivery.</p>
+                    <p><a href="{{route('shop') }}" class="btn btn-secondary me-2">Shop Now</a></p>
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-5">
                 <div class="hero-img-wrap">
                     <img src="{{asset('frontend/assets/images/couch.png')}}" class="img-fluid">
                 </div>

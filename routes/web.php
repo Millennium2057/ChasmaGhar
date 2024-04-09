@@ -25,5 +25,5 @@ Route::get('/login/register',[HomeController::class,'register'])->name('register
 
 
 //Dashboard
-Route::get('/admin',[AdminController::class,'dashboard'])->name('dashboard');
+Route::get('/admin',[AdminController::class,'dashboard'])->name('dashboard')->middleware('auth');
 
