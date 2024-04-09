@@ -32,5 +32,5 @@ Route::post('/login/register',[AuthController::class,'registerUser'])->name('reg
 
 
 //Dashboard
-Route::get('/admin',[AdminController::class,'dashboard'])->name('dashboard')->middleware('auth');
+Route::get('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard')->middleware('auth');
 
