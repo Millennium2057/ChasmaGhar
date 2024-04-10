@@ -20,8 +20,17 @@
             </ul>
 
             <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                <li><a class="nav-link" href="{{route('login') }}"><img src="{{asset('frontend/assets/images/user.svg')}}"></a></li>
                 <li><a class="nav-link" href="{{route('cart') }}"><img src="{{asset('frontend/assets/images/cart.svg')}}"></a></li>
+                @if (Auth::check())
+                <li><a class="nav-link" href="{{route('logout') }}"><img src="{{asset('frontend/assets/images/logout.svg')}}"></a></li>
+                @else
+                <li><a class="nav-link" href="{{route('login') }}"><img src="{{asset('frontend/assets/images/user.svg')}}"></a></li>
+                @endif
+
+
+                @if (Auth::check())
+                <li><span class="nav-link">Hi,<span> </span>{{ Auth::user()->name }}</span></li>
+                @endif
             </ul>
         </div>
     </div>

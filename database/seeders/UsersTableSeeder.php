@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name' => 'Amit',
             'email' => 'mille@gmail.com',
-            'password' => Hash::make('password'),
-            'role' => 'user', // Hash the password
+            'password' => Hash::make('password'),// Hash the password
+            'role' => 'user', 
         ]);
 
         User::create([
-            'name' => 'Admin Name',
+            'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'), // Hash the password
             'role' => 'admin', // Assign admin role

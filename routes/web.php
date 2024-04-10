@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,10 +29,21 @@ Route::post('/login', [AuthController::class, 'loginUser'])->name('handle.user')
 Route::get('/login/register',[AuthController::class,'register'])->name('register');
 Route::post('/login/register',[AuthController::class,'registerUser'])->name('register.user');
 
+Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 
 
 
 
-//Dashboard
-Route::get('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard')->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    // Admin
+
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+    //product
+    Route::get('/show.product', [DashboardController::class, 'showProduct'])->name('show.product');
+    Route::get('/add.product', [DashboardController::class, 'addProduct'])->name('add.product');
+    Route::get('/edit.product', [DashboardController::class, 'editProduct'])->name('edit.product');
+
+
+});
 

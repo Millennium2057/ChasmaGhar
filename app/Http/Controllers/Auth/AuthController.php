@@ -15,25 +15,28 @@ class AuthController extends Controller
 
     public function loginUser(Request $request)
     {
-
-
         try {
-          
-            if (Auth::attempt(["email"=>$request->email, "password"=>$request->password])) {
-                // Check the user's role
+           
+            // Attempt to authenticate the user
+            if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
+                // Authentication successful, now check user's role
                 if (Auth::user()->role === 'admin') {
                     // If the user is an admin, redirect to the admin dashboard
                     return redirect()->route('admin.dashboard');
-                } else {
+                     // If the user is a regular user, redirect to the user dashboard
+                } else if (Auth::user()->role === 'user') {
+                   
                     // If the user is a regular user, redirect to the user dashboard
                     return redirect()->route('index');
+                  
                 }
             } else {
-                // If the user is not authenticated, redirect to the login page
-                return redirect()->route('login');
+                // If the authentication attempt fails, redirect to the login page with an error message
+                return redirect()->route('login')->with('error', 'Invalid email or password.' );
             }
         } catch (\Throwable $th) {
-            dd($th);
+            // Catch any other exceptions that might occur during the authentication process
+            return back()->with('error', 'Error while logging in: ' . $th->getMessage());
         }
     }
 
@@ -68,5 +71,12 @@ class AuthController extends Controller
         } catch (Exception $ex) {
             return back()->with('error', 'An error occurred while processing your request. ' . $ex->getMessage());
         }
+    }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('index');
     }
 }
