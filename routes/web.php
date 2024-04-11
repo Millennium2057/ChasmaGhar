@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -37,12 +38,17 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     // Admin
 
-    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
 
     //product
-    Route::get('/show.product', [DashboardController::class, 'showProduct'])->name('show.product');
-    Route::get('/add.product', [DashboardController::class, 'addProduct'])->name('add.product');
-    Route::get('/edit.product', [DashboardController::class, 'editProduct'])->name('edit.product');
+    Route::get('/show.product', [ProductController::class, 'showProduct'])->name('show.product');
+    Route::get('/add.product', [ProductController::class, 'addProduct'])->name('add.product');
+    Route::post('/store.product', [ProductController::class, 'storeProduct'])->name('store.product');
+    Route::get('/edit.product/{id}', [ProductController::class, 'editProduct'])->name('edit.product');
+    Route::post('/update.product/{id}', [ProductController::class, 'updateProduct'])->name('update.product');
+    Route::get('/delete.product/{id}', [ProductController::class, 'deleteProduct'])->name('delete.product');
+
+
 
 
 });

@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
                 @if (session('error'))
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" id="alert">
                     {{ session('error') }}
                 </div>
                 @endif
@@ -70,6 +70,6 @@
 <script>
     setTimeout(function() {
         document.getElementById('alert').style.display = 'none';
-    }, 10000); // Set the delay to 5000 milliseconds (5 seconds)
+    }, 5000); // Set the delay to 5000 milliseconds (5 seconds)
 </script>
 @endsection

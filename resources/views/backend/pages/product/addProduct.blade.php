@@ -16,23 +16,23 @@
         <strong>{{ $message }}</strong>
     </div>
     @endif
-    <div class="container-fluid">
-        <form action="/store_product_" method="post" enctype="multipart/form-data">
+    <div class="container-fluid" style="margin-top: 50px; ">
+        <form action="{{route('store.product')}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4 class="my-3">Add Product </h4>
             <p class="">You can add new product here. Please Fill up the form below: </p>
             <hr />
             <div class="form-group">
                 <label for="">Product name</label>
-                <input type="text" name="product__name" placeholder="add product  name" class="form-control">
+                <input type="text" name="name" placeholder="add product  name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Product description</label>
-                <textarea type="text" id="menubar" name="product__description" placeholder="add product  description" rows="4" class="form-control"> </textarea>
+                <label for="product-price">Product price</label>
+                <input type="number" id="product-price" name="price" placeholder="Enter product price" class="form-control" min="0" step="0.01" required>
             </div>
             <div class="form-group">
                 <label for="">Product image</label>
-                <input id="product" type="file" name="product_image[]" multiple placeholder="add product  product" class="form-control" required>
+                <input id="product" type="file" name="product_image" multiple placeholder="add product  product" class="form-control" required>
             </div>
             <div class="" id="create-product-btn">
                 <input type="submit" class="btn btn-info " value="Add product ">
@@ -80,7 +80,7 @@
     }
 
     .container-fluid #create-product-btn input {
-    
+
         margin: 0 auto;
         font-size: 17px !important;
         font-weight: 500 !important;

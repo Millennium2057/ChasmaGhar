@@ -18,18 +18,18 @@
     </div>
     @endif
     <div class="container-fluid">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{route('update.product', $editProducts->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4 class="my-3">Edit product</h4>
             <p class="">You can edit product here. Please edit the form below:</p>
             <hr />
             <div class="form-group">
                 <label for="">Product name</label>
-                <input type="text" name="product_name" value="" placeholder="add event name" class="form-control">
+                <input type="text" name="name" value="{{ $editProducts->name }}" placeholder="add event name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Product description</label>
-                <textarea type="text" id="menubar" name="product_description" value="" placeholder="add event description" rows="4" class="form-control">{}</textarea>
+                <label for="product-price">Product price</label>
+                <input type="number" id="product-price" name="price" value="{{ $editProducts->price }}" placeholder="Enter product price" class="form-control" min="0" step="0.01" required>
             </div>
             <div class="form-group">
                 <label for="">Product Image</label>
@@ -51,7 +51,7 @@
             <div style="justify-content:space-around; margin-bottom: 20px;">
              
 
-                <img src="" style="height: 100px; margin-right: 50px;" onclick="openLightbox('{}')" class="" alt="Chasma Ghar">
+                <img src="{{$editProducts->image}}" style="height: 100px; margin-right: 50px;" onclick="openLightbox('{}')" class="" alt="Chasma Ghar">
 
               
             </div>

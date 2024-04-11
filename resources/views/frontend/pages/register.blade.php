@@ -1,14 +1,15 @@
 @extends('frontend.includes.app')
 @section('main-content')
 <div class="container mt-5 mb-5">
-    @if (session('error'))
-    <div class="alert alert-danger">
-        {{ session('error') }}
-    </div>
-    @endif
+
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
+                @if (session('error'))
+                <div class="alert alert-danger" id="alert">
+                    {{ session('error') }}
+                </div>
+                @endif
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -67,4 +68,24 @@
     </div>
 </div>
 </div>
+
+<script>
+    var password = document.getElementById("password");
+    var confirmPassword = document.getElementById("password-confirm");
+
+    function validatePassword() {
+        if (password.value != confirmPassword.value) {
+            confirmPassword.setCustomValidity("Passwords don't match");
+        } else {
+            confirmPassword.setCustomValidity('');
+        }
+    }
+
+    password.onchange = validatePassword;
+    confirmPassword.onkeyup = validatePassword;
+
+    setTimeout(function() {
+        document.getElementById('alert').style.display = 'none';
+    }, 5000); 
+</script>
 @endsection

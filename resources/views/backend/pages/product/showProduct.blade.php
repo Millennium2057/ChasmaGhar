@@ -16,51 +16,46 @@
         <strong>{{ $message }}</strong>
     </div>
     @endif
-    
-   
+
+    @if($products->isEmpty())
     <div style=" height:250px; display:flex; justify-content:center;">
         <div style="margin-top: 100px;">
             <p>No Products are available at the moment. Please add an product:</p>
-            <a style="margin-left:160px" href="/create_image_gallery" class="btn btn-primary">Add Product</a>
+            <a style="margin-left:160px" href="/add.product" class="btn btn-primary">Add Product</a>
         </div>
     </div>
-
-   
-
+    @else
 
     <table class="table">
         <thead>
             <th scope="col">S.N</th>
             <th scope="col">Product name</th>
-            <th scope="col">Product description</th>
+            <th scope="col">Product price</th>
             <th scope="col">Product image</th>
             <th scope="col">Actions</th>
         </thead>
         <tbody>
-          
+            @foreach($products as $product)
             <tr>
-                <td>{}</td>
-                <td>he</td>
-                <td></td>
-
-               
-
+                <td>{{ $loop->iteration }}</td>
+                <td>{{$product->name}}</td>
+                <td>{{$product->price}}</td>
                 <td>
 
-                  
 
-                    <img src="" class="img-circle " style="height: 50px; width: 50px; margin-left:-10px; border:3px solid #ffffff" alt="Chasma Ghar">
-                 
+
+                    <img src="{{ $product->image }}" class="img-circle " style="height: 50px; width: 50px; margin-left:-10px; border:3px solid #ffffff" alt="Chasma Ghar">
+
                 </td>
 
 
-                <th><a href="/edit.product"><i class="fas fa-edit"></i></a><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></th>
+                <th><a href="{{route('edit.product' , $product->id)}}"><i class="fas fa-edit"></i></a><a href="{{route('delete.product' , $product->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
             </tr>
-       
 
+            @endforeach
         </tbody>
     </table>
-
+    @endif
 </div>
 
 <style>
