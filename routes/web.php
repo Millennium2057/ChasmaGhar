@@ -48,8 +48,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update.product/{id}', [ProductController::class, 'updateProduct'])->name('update.product');
     Route::get('/delete.product/{id}', [ProductController::class, 'deleteProduct'])->name('delete.product');
 
-
-
-
 });
 
